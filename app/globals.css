@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
+/* VARIABLES */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121414;
+  --primary: #ffcc00;
+  --text: #e2e2e2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* BASE */
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* NOISE OVERLAY */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* HAZARD PATTERN */
+.hazard-pattern {
+  background: repeating-linear-gradient(
+    45deg,
+    #f1c100,
+    #f1c100 10px,
+    #121414 10px,
+    #121414 20px
+  );
+}
+
+/* Material Icons – required for services & about pages */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+  display: inline-block;
+  line-height: 1;
+}
+
+/* Industrial grid background (used in services page) */
+.industrial-grid {
+  background-image: linear-gradient(#1a1c1c 2px, transparent 2px),
+    linear-gradient(90deg, #1a1c1c 2px, transparent 2px);
+  background-size: 40px 40px;
+}
+
+/* Custom utility classes (used in services page) */
+.max-w-container-max {
+  max-width: 1280px;
+}
+
+.decoration-8 {
+  text-decoration-thickness: 8px;
 }
