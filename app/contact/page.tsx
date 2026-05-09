@@ -1,7 +1,16 @@
-// app/contact/page.tsx
 'use client';
 
+import { useState } from 'react';
+
 export default function ContactPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <>
       <style>{`
@@ -60,13 +69,13 @@ export default function ContactPage() {
 
       <main className="flex-grow concrete-texture bg-background text-on-background">
         {/* Hero Title Section */}
-        <section className="py-20 px-6 border-b-4 border-surface-container-highest">
+        <section className="py-12 md:py-20 px-4 sm:px-6 border-b-4 border-surface-container-highest">
           <div className="max-w-container-max mx-auto">
             <div className="inline-block hazard-pattern h-4 w-24 mb-6"></div>
-            <h1 className="font-display-lg text-display-lg text-yellow-400 uppercase leading-none">
+            <h1 className="font-display-lg text-yellow-400 uppercase leading-none text-4xl sm:text-5xl md:text-6xl lg:text-[64px] break-words">
               GET IN TOUCH
             </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-2xl">
+            <p className="font-body-lg text-on-surface-variant mt-4 max-w-2xl text-base md:text-lg">
               Our structural engineers and project managers are ready to discuss your next industrial venture. Precision is our baseline; excellence is our delivery.
             </p>
           </div>
@@ -77,7 +86,7 @@ export default function ContactPage() {
           {/* Contact Info Blocks */}
           <div className="lg:col-span-5 border-r-0 lg:border-r-4 border-surface-container-highest">
             {/* Address Block */}
-            <div className="p-12 border-b-4 border-surface-container-highest bg-surface-container-low hover:bg-surface-container transition-colors group">
+            <div className="p-6 md:p-12 border-b-4 border-surface-container-highest bg-surface-container-low hover:bg-surface-container transition-colors group">
               <span
                 className="material-symbols-outlined text-yellow-400 text-4xl mb-4"
                 style={{ fontVariationSettings: "'FILL' 1" }}
@@ -87,7 +96,7 @@ export default function ContactPage() {
               <h2 className="font-label-bold text-label-bold text-yellow-400 uppercase tracking-widest mb-2">
                 Headquarters
               </h2>
-              <p className="font-headline-md text-headline-md text-on-surface uppercase break-words">
+              <p className="font-headline-md text-on-surface uppercase break-words text-xl md:text-3xl">
                 22 ADAMS AVENUE,<br />
                 STOKE-ON-TRENT,<br />
                 ST6 5PE
@@ -95,7 +104,7 @@ export default function ContactPage() {
             </div>
 
             {/* Email Block */}
-            <div className="p-12 border-b-4 border-surface-container-highest bg-surface-container-low hover:bg-surface-container transition-colors group">
+            <div className="p-6 md:p-12 border-b-4 border-surface-container-highest bg-surface-container-low hover:bg-surface-container transition-colors group">
               <span
                 className="material-symbols-outlined text-yellow-400 text-4xl mb-4"
                 style={{ fontVariationSettings: "'FILL' 1" }}
@@ -106,7 +115,7 @@ export default function ContactPage() {
                 Electronic Inquiries
               </h2>
               <a
-                className="font-headline-md text-headline-md text-on-surface uppercase block hover:text-yellow-400 transition-none underline decoration-2 underline-offset-8"
+                className="font-headline-md text-on-surface uppercase block hover:text-yellow-400 transition-none underline decoration-2 underline-offset-8 break-all text-lg md:text-2xl"
                 href="mailto:sales@apexehalton.co.uk"
               >
                 sales@apexehalton.co.uk
@@ -114,66 +123,142 @@ export default function ContactPage() {
             </div>
 
             {/* Action Block */}
-            <div className="p-12 bg-zinc-900">
-              <button className="w-full py-6 bg-yellow-400 text-black font-black text-xl font-serif uppercase tracking-tighter hover:bg-white active:translate-y-2 transition-none border-b-8 border-yellow-600 active:border-b-0 flex items-center justify-center gap-3">
+            <div className="p-6 md:p-12 bg-zinc-900">
+              <a
+                href="tel:+441782000000"
+                className="w-full py-4 md:py-6 bg-yellow-400 text-black font-black text-base md:text-xl font-serif uppercase tracking-tighter hover:bg-white active:translate-y-2 transition-none border-b-8 border-yellow-600 active:border-b-0 flex items-center justify-center gap-3"
+              >
                 <span className="material-symbols-outlined">call</span>
-                COMMENCE DIALOGUE
-              </button>
-              <p className="font-label-bold text-label-bold text-zinc-500 mt-6 uppercase text-center">
+                Call Our Team
+              </a>
+              <p className="font-label-bold text-zinc-500 mt-6 uppercase text-center text-xs md:text-sm">
                 Available Mon-Fri | 08:00 - 18:00 GMT
               </p>
             </div>
           </div>
 
           {/* Map Section */}
-          <div className="lg:col-span-7 bg-surface-container-lowest min-h-[500px] relative overflow-hidden">
-            <div className="absolute inset-0 z-0 grayscale contrast-125 opacity-40 mix-blend-luminosity">
-              <img
-                className="w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCudtN7fY3HoP7BIme3C_vgkqtqDnzPwk1wNaXGIlNz0RJeWPuav568ZVnsGY1YwVFosNKtVEziMMS1QbGbcrG0_ReSZZp8ZSkTfqtdwtSHp707vA2fbm6gYu3597jTTqXJLVPnQ0ITXa3e9YfreH4xU7pTWQmwj2Li5DZxG0VkUqYkrtS9E0FWlzSXcjM5yOiQcPpa4fmLZHoB8_Yk2TnpQBisxdcC7mIFDN8NLhdOw4lRukAaFSJ_GEEFs768t1CR6a3vWLwjuQ"
-                alt="Aerial view of industrial district"
-              />
-            </div>
-            {/* Dark Overlay Map Placeholder */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-black via-transparent to-black/50 pointer-events-none"></div>
+          <div className="lg:col-span-7 bg-surface-container-lowest min-h-[360px] md:min-h-[500px] relative overflow-hidden">
+            <iframe
+              title="Apexe Hallton Ltd headquarters location"
+              src="https://www.google.com/maps?q=22+Adams+Avenue,+Stoke-on-Trent,+ST6+5PE&output=embed"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="absolute inset-0 w-full h-full border-0 grayscale contrast-110"
+              allowFullScreen
+            />
+            <div className="pointer-events-none absolute inset-0 ring-4 ring-inset ring-yellow-400/20"></div>
 
-            <div className="relative z-10 p-12 h-full flex flex-col justify-between">
-              <div className="bg-zinc-950/90 border-2 border-yellow-400 p-6 inline-block backdrop-blur-sm self-start max-w-sm">
-                <h3 className="font-label-bold text-label-bold text-yellow-400 uppercase mb-2">
+            <div className="pointer-events-none absolute top-4 left-4 right-4 md:top-6 md:left-6 md:right-auto z-10 max-w-sm">
+              <div className="pointer-events-auto bg-zinc-950/90 border-2 border-yellow-400 p-4 md:p-6 backdrop-blur-sm">
+                <h3 className="font-label-bold text-yellow-400 uppercase mb-2 text-xs md:text-sm">
                   Location Logistics
                 </h3>
-                <p className="text-on-surface text-sm">
-                  Our facility is situated in the heart of Stoke-on-Trent's industrial corridor, optimized for logistics and onsite consultations.
+                <p className="text-on-surface text-xs md:text-sm mb-3">
+                  Our facility is situated in the heart of Stoke-on-Trent&apos;s industrial corridor, optimised for logistics and onsite consultations.
                 </p>
-              </div>
-
-              <div className="flex gap-4 self-end">
-                <div className="bg-black p-4 border border-zinc-700">
-                  <span className="material-symbols-outlined text-yellow-400">
-                    zoom_in
-                  </span>
-                </div>
-                <div className="bg-black p-4 border border-zinc-700">
-                  <span className="material-symbols-outlined text-yellow-400">
-                    zoom_out
-                  </span>
-                </div>
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=22+Adams+Avenue,+Stoke-on-Trent,+ST6+5PE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-yellow-400 font-bold uppercase text-xs md:text-sm hover:text-white transition-colors"
+                >
+                  <span className="material-symbols-outlined text-base">directions</span>
+                  Get Directions
+                </a>
               </div>
             </div>
 
-            {/* Industrial Crosshair Graphics */}
-            <div className="absolute top-0 right-0 p-4 opacity-30">
+            <div className="pointer-events-none absolute top-0 right-0 p-4 opacity-30">
               <div className="border-t-2 border-r-2 border-yellow-400 w-12 h-12"></div>
             </div>
-            <div className="absolute bottom-0 left-0 p-4 opacity-30">
+            <div className="pointer-events-none absolute bottom-0 left-0 p-4 opacity-30">
               <div className="border-b-2 border-l-2 border-yellow-400 w-12 h-12"></div>
             </div>
           </div>
         </section>
 
+        {/* Contact Form Section */}
+        <section className="py-12 md:py-20 px-4 sm:px-6 border-b-4 border-surface-container-highest">
+          <div className="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
+            <div className="lg:col-span-5">
+              <div className="inline-block hazard-pattern h-2 w-16 mb-4"></div>
+              <h2 className="font-display-lg text-on-surface uppercase mb-4 text-3xl md:text-5xl">
+                Send Us a <span className="text-yellow-400">Message</span>
+              </h2>
+              <p className="font-body-md text-on-surface-variant text-sm md:text-base">
+                Share a few details about your project and our team will respond within 24 hours with an initial assessment.
+              </p>
+            </div>
+            <div className="lg:col-span-7">
+              {submitted ? (
+                <div className="border-4 border-yellow-400 bg-surface-container p-6 md:p-8">
+                  <h3 className="font-headline-md text-yellow-400 uppercase mb-3 text-xl md:text-2xl">
+                    Message received
+                  </h3>
+                  <p className="text-on-surface-variant text-sm md:text-base">
+                    Thank you, {form.name || 'colleague'}. Our team will be in touch shortly at {form.email || 'the address provided'}.
+                  </p>
+                </div>
+              ) : (
+                <form
+                  onSubmit={handleSubmit}
+                  className="bg-surface-container border-4 border-surface-container-highest p-5 md:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5"
+                >
+                  <label className="flex flex-col gap-2 text-xs uppercase font-bold tracking-widest text-zinc-400">
+                    Name
+                    <input
+                      required
+                      type="text"
+                      value={form.name}
+                      onChange={(e) => setForm({ ...form, name: e.target.value })}
+                      className="w-full bg-black border-2 border-zinc-700 focus:border-yellow-400 outline-none text-on-surface px-3 py-3 text-sm md:text-base"
+                    />
+                  </label>
+                  <label className="flex flex-col gap-2 text-xs uppercase font-bold tracking-widest text-zinc-400">
+                    Email
+                    <input
+                      required
+                      type="email"
+                      value={form.email}
+                      onChange={(e) => setForm({ ...form, email: e.target.value })}
+                      className="w-full bg-black border-2 border-zinc-700 focus:border-yellow-400 outline-none text-on-surface px-3 py-3 text-sm md:text-base"
+                    />
+                  </label>
+                  <label className="sm:col-span-2 flex flex-col gap-2 text-xs uppercase font-bold tracking-widest text-zinc-400">
+                    Subject
+                    <input
+                      type="text"
+                      value={form.subject}
+                      onChange={(e) => setForm({ ...form, subject: e.target.value })}
+                      className="w-full bg-black border-2 border-zinc-700 focus:border-yellow-400 outline-none text-on-surface px-3 py-3 text-sm md:text-base"
+                    />
+                  </label>
+                  <label className="sm:col-span-2 flex flex-col gap-2 text-xs uppercase font-bold tracking-widest text-zinc-400">
+                    Project Details
+                    <textarea
+                      required
+                      rows={5}
+                      value={form.message}
+                      onChange={(e) => setForm({ ...form, message: e.target.value })}
+                      className="w-full bg-black border-2 border-zinc-700 focus:border-yellow-400 outline-none text-on-surface px-3 py-3 text-sm md:text-base resize-y"
+                    />
+                  </label>
+                  <button
+                    type="submit"
+                    className="sm:col-span-2 w-full sm:w-auto justify-self-start bg-yellow-400 text-black font-black uppercase tracking-tighter px-6 md:px-8 py-3 md:py-4 border-b-8 border-yellow-600 hover:bg-white active:translate-y-1 active:border-b-2 transition-none"
+                  >
+                    Send Message
+                  </button>
+                </form>
+              )}
+            </div>
+          </div>
+        </section>
+
         {/* Secondary Info (Grid Style) */}
-        <section className="py-16 px-6 bg-zinc-950">
-          <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+        <section className="py-12 md:py-16 px-4 sm:px-6 bg-zinc-950">
+          <div className="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             <div className="border-l-4 border-zinc-800 pl-6">
               <h4 className="font-label-bold text-label-bold text-zinc-400 uppercase mb-2">
                 Safety Standards

@@ -1,5 +1,6 @@
-// components/HeroSection.tsx (or paste directly into your home page)
 'use client';
+
+import Link from 'next/link';
 
 export default function HeroSection() {
   return (
@@ -39,13 +40,19 @@ export default function HeroSection() {
           </p>
 
           {/* Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center mt-6 md:mt-8">
-            <button className="bg-yellow-400 text-black px-6 md:px-8 py-2 md:py-3 text-sm md:text-base font-bold uppercase hover:bg-white hover:text-black transition-all duration-200 active:scale-95">
-              VIEW OUR SERVICES
-            </button>
-            <button className="border-2 border-yellow-400 text-yellow-400 px-6 md:px-8 py-2 md:py-3 text-sm md:text-base font-bold uppercase hover:bg-yellow-400 hover:text-black transition-all duration-200 active:scale-95">
-              CONTACT US
-            </button>
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center mt-6 md:mt-8">
+            <Link
+              href="/services"
+              className="bg-yellow-400 text-black px-6 md:px-8 py-3 text-sm md:text-base font-bold uppercase hover:bg-white hover:text-black transition-all duration-200 active:scale-95 inline-block"
+            >
+              Explore Our Services
+            </Link>
+            <Link
+              href="/contact"
+              className="border-2 border-yellow-400 text-yellow-400 px-6 md:px-8 py-3 text-sm md:text-base font-bold uppercase hover:bg-yellow-400 hover:text-black transition-all duration-200 active:scale-95 inline-block"
+            >
+              Request a Consultation
+            </Link>
           </div>
         </div>
 

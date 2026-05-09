@@ -2,6 +2,7 @@
 'use client';
 
 import HeroSection from '@/components/HeroSection';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Home() {
@@ -263,12 +264,18 @@ export default function Home() {
             Consult with our engineers to review your project specifications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
-            <button className="bg-yellow-400 px-6 md:px-12 py-3 md:py-5 text-base md:text-xl font-bold uppercase hover:bg-black hover:text-yellow-400 transition-none active:translate-y-1">
-              GET IN TOUCH
-            </button>
-            <button className="border-4 border-yellow-400 px-6 md:px-12 py-3 md:py-5 text-base md:text-xl font-bold uppercase text-yellow-400 hover:bg-yellow-400 hover:text-black transition-none active:translate-y-1">
-              DOWNLOAD BROCHURE
-            </button>
+            <Link
+              href="/contact"
+              className="bg-yellow-400 px-6 md:px-12 py-3 md:py-5 text-base md:text-xl font-bold uppercase text-black hover:bg-black hover:text-yellow-400 transition-none active:translate-y-1 inline-block"
+            >
+              Request a Consultation
+            </Link>
+            <Link
+              href="/services"
+              className="border-4 border-yellow-400 px-6 md:px-12 py-3 md:py-5 text-base md:text-xl font-bold uppercase text-yellow-400 hover:bg-yellow-400 hover:text-black transition-none active:translate-y-1 inline-block"
+            >
+              Explore Our Services
+            </Link>
           </div>
         </div>
       </section>
@@ -375,9 +382,12 @@ export default function Home() {
       <section className="bg-surface-container-high border-t-4 border-surface-tint py-10 md:py-12 px-6 text-center">
         <div className="max-w-1280 mx-auto">
           <h3 className="font-display-lg text-on-surface uppercase text-2xl md:text-5xl mb-4">Ready to build with authority?</h3>
-          <button className="bg-surface-tint text-background font-serif uppercase tracking-tighter font-black px-6 md:px-10 py-3 md:py-4 border-2 border-surface-tint hover:bg-background hover:text-surface-tint transition-none active:translate-y-1 text-sm md:text-base">
-            START YOUR PROJECT
-          </button>
+          <Link
+            href="/contact"
+            className="inline-block bg-surface-tint text-background font-serif uppercase tracking-tighter font-black px-6 md:px-10 py-3 md:py-4 border-2 border-surface-tint hover:bg-background hover:text-surface-tint transition-none active:translate-y-1 text-sm md:text-base"
+          >
+            Start Your Project
+          </Link>
         </div>
       </section>
     </>

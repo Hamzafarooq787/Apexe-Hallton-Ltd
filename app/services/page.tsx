@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function ServicesPage() {
   return (
     <>
@@ -38,20 +40,20 @@ export default function ServicesPage() {
         }
       `}</style>
 
-      <main className="pt-24 min-h-screen industrial-grid">
+      <main className="pt-8 md:pt-16 min-h-screen industrial-grid">
         {/* Hero Section */}
-        <header className="max-w-container-max mx-auto px-6 py-20 border-x-4 border-surface-container-high bg-surface-container-lowest">
+        <header className="max-w-container-max mx-auto px-4 sm:px-6 py-12 md:py-20 border-x-0 md:border-x-4 border-surface-container-high bg-surface-container-lowest">
           <div className="max-w-4xl">
-            <p className="text-primary-fixed-dim font-label-bold mb-4 tracking-widest uppercase">
+            <p className="text-primary-fixed-dim font-label-bold mb-4 tracking-widest uppercase text-xs md:text-sm">
               PRECISION ENGINEERING • STRUCTURAL INTEGRITY
             </p>
-            <h1 className="font-display-lg uppercase mb-8 text-on-surface">
+            <h1 className="font-display-lg uppercase mb-6 md:mb-8 text-on-surface text-4xl sm:text-5xl md:text-6xl lg:text-[64px]">
               CORE CONSTRUCTION{" "}
-              <span className="text-primary-fixed-dim underline decoration-8">
+              <span className="text-primary-fixed-dim underline decoration-4 md:decoration-8 underline-offset-4">
                 SERVICES
               </span>
             </h1>
-            <p className="text-body-lg text-on-surface-variant max-w-2xl">
+            <p className="text-on-surface-variant max-w-2xl text-base md:text-lg">
               Forging the future through heavy-duty industrial expertise and
               uncompromising quality standards. Our services span the entire lifecycle
               of major structural developments.
@@ -63,16 +65,16 @@ export default function ServicesPage() {
         <section className="max-w-container-max mx-auto border-x-4 border-surface-container-high bg-background">
           {/* 1. Residential Construction */}
           <div className="grid grid-cols-1 md:grid-cols-2 border-b-4 border-surface-container-high">
-            <div className="p-12 flex flex-col justify-center border-b-4 md:border-b-0 md:border-r-4 border-surface-container-high bg-surface-container">
+            <div className="p-6 md:p-12 flex flex-col justify-center border-b-4 md:border-b-0 md:border-r-4 border-surface-container-high bg-surface-container">
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-primary-fixed-dim text-on-primary-fixed text-4xl font-black p-4 leading-none">
                   01
                 </span>
-                <h2 className="font-headline-lg uppercase text-on-surface">
+                <h2 className="font-headline-lg uppercase text-on-surface text-2xl md:text-4xl">
                   Residential Construction
                 </h2>
               </div>
-              <p className="text-body-lg text-on-surface-variant mb-10 leading-relaxed">
+              <p className="text-on-surface-variant mb-8 md:mb-10 leading-relaxed text-base md:text-lg">
                 We specialize in high-spec custom homes and large-scale residential
                 extensions. Our approach combines architectural ambition with
                 structural permanence, ensuring every domestic project meets
@@ -99,9 +101,9 @@ export default function ServicesPage() {
                   REINFORCED FOUNDATIONS
                 </li>
               </ul>
-              <button className="w-fit bg-transparent border-4 border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-black uppercase hover:bg-primary-fixed-dim hover:text-black transition-none active:translate-y-1">
-                VIEW RESIDENTIAL PORTFOLIO
-              </button>
+              <Link href="/contact" className="w-fit bg-transparent border-4 border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-black uppercase hover:bg-primary-fixed-dim hover:text-black transition-none active:translate-y-1 inline-block">
+                Discuss Your Residential Project
+              </Link>
             </div>
             <div className="h-[500px] md:h-auto bg-surface-container-highest overflow-hidden">
               <img
@@ -121,16 +123,16 @@ export default function ServicesPage() {
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0PAM9aZ7BMkRQ44mKE5WZJrYczs3RJl5eE7SErvAaUCG6XwtlqMp97xPNnoh4UeNf2ifTEj7RwOi983nqldUh9EGvWv3EBum3vnZtxjRYO1mNVGSi2GT6vRExd3dTLEvSDAhair7aPHIJ1xftTMOYCUgU1ViO5uAxK_16XKi9m2mNT7tyytYUkPYkxVf-wVqHWfdXP5IlY4DFfrUkAxmzsTWIVbzmzjAcynD6GfkZMmub6vHUvT5VEQ5ue8vOYnw33KqmEU18Xw"
               />
             </div>
-            <div className="p-12 flex flex-col justify-center bg-surface-container order-1 md:order-2 border-b-4 md:border-b-0 border-surface-container-high">
+            <div className="p-6 md:p-12 flex flex-col justify-center bg-surface-container order-1 md:order-2 border-b-4 md:border-b-0 border-surface-container-high">
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-primary-fixed-dim text-on-primary-fixed text-4xl font-black p-4 leading-none">
                   02
                 </span>
-                <h2 className="font-headline-lg uppercase text-on-surface">
+                <h2 className="font-headline-lg uppercase text-on-surface text-2xl md:text-4xl">
                   Commercial Developments
                 </h2>
               </div>
-              <p className="text-body-lg text-on-surface-variant mb-10 leading-relaxed">
+              <p className="text-on-surface-variant mb-8 md:mb-10 leading-relaxed text-base md:text-lg">
                 Precision-engineered workspaces, retail hubs, and commercial complexes.
                 APEXE HALLTON LTD manages the end-to-end development of commercial
                 assets, prioritizing operational efficiency and structural durability.
@@ -157,24 +159,24 @@ export default function ServicesPage() {
                   RETAIL INFRASTRUCTURE
                 </li>
               </ul>
-              <button className="w-fit bg-primary-fixed-dim text-black px-8 py-4 font-black uppercase hover:bg-white transition-none active:translate-y-1">
-                COMMERCIAL SPECS
-              </button>
+              <Link href="/contact" className="w-fit bg-primary-fixed-dim text-black px-8 py-4 font-black uppercase hover:bg-white transition-none active:translate-y-1 inline-block">
+                Request Commercial Specs
+              </Link>
             </div>
           </div>
 
           {/* 3. Renovation & Restoration */}
           <div className="grid grid-cols-1 md:grid-cols-2 border-b-4 border-surface-container-high">
-            <div className="p-12 flex flex-col justify-center border-b-4 md:border-b-0 md:border-r-4 border-surface-container-high bg-surface-container">
+            <div className="p-6 md:p-12 flex flex-col justify-center border-b-4 md:border-b-0 md:border-r-4 border-surface-container-high bg-surface-container">
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-primary-fixed-dim text-on-primary-fixed text-4xl font-black p-4 leading-none">
                   03
                 </span>
-                <h2 className="font-headline-lg uppercase text-on-surface">
+                <h2 className="font-headline-lg uppercase text-on-surface text-2xl md:text-4xl">
                   Renovation &amp; Restoration
                 </h2>
               </div>
-              <p className="text-body-lg text-on-surface-variant mb-10 leading-relaxed">
+              <p className="text-on-surface-variant mb-8 md:mb-10 leading-relaxed text-base md:text-lg">
                 Restoring heritage structures and modernizing aging industrial assets.
                 Our renovation team specializes in seismic retrofitting, structural
                 reinforcement, and modern interior integration for existing builds. We
@@ -201,9 +203,9 @@ export default function ServicesPage() {
                   MODERN INTERIOR REFITS
                 </li>
               </ul>
-              <button className="w-fit bg-transparent border-4 border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-black uppercase hover:bg-primary-fixed-dim hover:text-black transition-none active:translate-y-1">
-                CONSULT ON RESTORATION
-              </button>
+              <Link href="/contact" className="w-fit bg-transparent border-4 border-primary-fixed-dim text-primary-fixed-dim px-8 py-4 font-black uppercase hover:bg-primary-fixed-dim hover:text-black transition-none active:translate-y-1 inline-block">
+                Consult on Restoration
+              </Link>
             </div>
             <div className="h-[500px] md:h-auto bg-surface-container-highest overflow-hidden">
               <img
@@ -223,16 +225,16 @@ export default function ServicesPage() {
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCd58_j0PhP34_-77hefYpbuu8hENINEoEqx3q44D8TUjHzieD2SoP44cVcb1CSMiW80cSyF-FTMyUVZNvPzWF7iZS44t6-62UYG1HATJh_3ieiXr1NkAS1ozfmPZIkZC6ddkbUE-FYwZTuwZXvy3Y3qLCcrGiErGaQkX_KyJtu0aA57PI7BPH_m-8hXc1UW183c0soeqB1YjO8Sb0v5HorEcxzil39lmsYhy234fT5fK9GGEEUgKAKe3DPrGAUYVfmtgVkuFQZQ"
               />
             </div>
-            <div className="p-12 flex flex-col justify-center bg-surface-container order-1 md:order-2">
+            <div className="p-6 md:p-12 flex flex-col justify-center bg-surface-container order-1 md:order-2">
               <div className="flex items-center gap-4 mb-6">
                 <span className="bg-primary-fixed-dim text-on-primary-fixed text-4xl font-black p-4 leading-none">
                   04
                 </span>
-                <h2 className="font-headline-lg uppercase text-on-surface">
+                <h2 className="font-headline-lg uppercase text-on-surface text-2xl md:text-4xl">
                   Industrial Engineering
                 </h2>
               </div>
-              <p className="text-body-lg text-on-surface-variant mb-10 leading-relaxed">
+              <p className="text-on-surface-variant mb-8 md:mb-10 leading-relaxed text-base md:text-lg">
                 Heavy-duty infrastructure for the industrial sector. From manufacturing
                 plants to technical power facilities, our engineering division delivers
                 the specialized environments required for high-intensity industrial
@@ -259,31 +261,37 @@ export default function ServicesPage() {
                   HAZARDOUS MATERIAL FACILITIES
                 </li>
               </ul>
-              <button className="w-fit bg-primary-fixed-dim text-black px-8 py-4 font-black uppercase hover:bg-white transition-none active:translate-y-1">
-                ENGINEERING CAPABILITIES
-              </button>
+              <Link href="/contact" className="w-fit bg-primary-fixed-dim text-black px-8 py-4 font-black uppercase hover:bg-white transition-none active:translate-y-1 inline-block">
+                Discuss Engineering Capabilities
+              </Link>
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section className="max-w-container-max mx-auto px-6 py-24 border-x-4 border-surface-container-high bg-zinc-950">
-          <div className="border-4 border-yellow-400 p-12 text-center bg-surface-container-lowest">
-            <h2 className="font-display-lg text-headline-lg uppercase mb-6 text-yellow-400">
+        <section className="max-w-container-max mx-auto px-4 sm:px-6 py-12 md:py-24 border-x-0 md:border-x-4 border-surface-container-high bg-zinc-950">
+          <div className="border-4 border-yellow-400 p-6 md:p-12 text-center bg-surface-container-lowest">
+            <h2 className="font-display-lg uppercase mb-4 md:mb-6 text-yellow-400 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
               BUILD WITH AUTHORITY
             </h2>
-            <p className="text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+            <p className="text-on-surface-variant max-w-2xl mx-auto mb-8 md:mb-10 text-base md:text-lg">
               Our team is ready to discuss the structural requirements of your next
               project. We provide detailed technical specifications and uncompromising
               project management.
             </p>
-            <div className="flex flex-col md:flex-row justify-center gap-6">
-              <button className="bg-yellow-400 text-black px-10 py-5 font-black uppercase tracking-tighter hover:bg-white transition-none">
-                START PROJECT CONSULTATION
-              </button>
-              <button className="border-4 border-white text-white px-10 py-5 font-black uppercase tracking-tighter hover:bg-white hover:text-black transition-none">
-                DOWNLOAD BROCHURE
-              </button>
+            <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
+              <Link
+                href="/contact"
+                className="bg-yellow-400 text-black px-6 md:px-10 py-4 md:py-5 font-black uppercase tracking-tighter hover:bg-white transition-none inline-block"
+              >
+                Request a Project Consultation
+              </Link>
+              <Link
+                href="/about"
+                className="border-4 border-white text-white px-6 md:px-10 py-4 md:py-5 font-black uppercase tracking-tighter hover:bg-white hover:text-black transition-none inline-block"
+              >
+                Learn More About Us
+              </Link>
             </div>
           </div>
         </section>
