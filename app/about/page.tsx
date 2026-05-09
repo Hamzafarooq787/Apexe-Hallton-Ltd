@@ -1,5 +1,6 @@
-// app/about/page.tsx
 'use client';
+
+import Link from 'next/link';
 
 export default function AboutPage() {
   return (
@@ -84,20 +85,20 @@ export default function AboutPage() {
         .bg-gradient-to-t { background-image: linear-gradient(to top, black, transparent); }
       `}</style>
 
-      <main className="max-w-1280 mx-auto px-6 py-16">
+      <main className="max-w-1280 mx-auto px-4 sm:px-6 py-12 md:py-16">
         {/* Hero Section */}
-        <section className="mb-24 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <section className="mb-16 md:mb-24 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
           <div className="lg:col-span-7">
             <div className="flex items-center gap-4 mb-6">
               <div className="h-1 w-12 bg-surface-tint"></div>
-              <span className="font-label-bold uppercase tracking-widest text-surface-tint">
+              <span className="font-label-bold uppercase tracking-widest text-surface-tint text-xs sm:text-sm">
                 ESTABLISHED IN STOKE-ON-TRENT
               </span>
             </div>
-            <h1 className="font-display-lg text-on-surface uppercase mb-8">
+            <h1 className="font-display-lg text-on-surface uppercase mb-6 md:mb-8 text-4xl sm:text-5xl md:text-6xl lg:text-[64px]">
               OUR LEGACY &amp; VISION
             </h1>
-            <div className="grid md:grid-cols-2 gap-8 border-l-4 border-surface-tint pl-8 py-2">
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8 border-l-4 border-surface-tint pl-6 md:pl-8 py-2">
               <p className="font-body-lg text-on-surface-variant">
                 Founded amidst the industrial heartland of Stoke-on-Trent, APEXE HALLTON
                 LTD began with a single mission: to redefine the structural integrity
@@ -118,7 +119,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5 relative">
             <div className="border-4 border-surface-tint p-2 bg-surface-container-low">
               <img
-                className="w-full h-[500px] object-cover grayscale contrast-125 brightness-75"
+                className="w-full h-[300px] md:h-[500px] object-cover grayscale contrast-125 brightness-75"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0WIwbLoiT74EUXh2iSXkSSl2y7egXGFGCmZ9YGYhphhpLc7mRYVZVPmE_Ur8Aa8vVvS2_bfrBwPpOMXuK4gZJOfLToqw6SIlr-B5a8Q1j-3F2C5rOtcKVbBs2OwNMua2z16yu-VmuoiNvS_uA9n6k4PnxMCUiv1VrbpQRKGCvkZneQC_TiUevNaiNpi6RgBmRIw87sPeK0CLQOKfpI_TgD8ugBlg_nmXN4b_gNT9Ukrg7yY706nEPbnvDGaYh8iQhUnBB2uUIqQ"
                 alt="Modern industrial headquarters"
               />
@@ -128,13 +129,13 @@ export default function AboutPage() {
         </section>
 
         {/* Core Values Section */}
-        <section className="mb-24">
-          <div className="flex justify-between items-end mb-12">
+        <section className="mb-16 md:mb-24">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-8 md:mb-12 gap-3">
             <div>
-              <h2 className="font-headline-lg uppercase text-on-surface mb-2">
+              <h2 className="font-headline-lg uppercase text-on-surface mb-2 text-3xl md:text-4xl">
                 Core Values
               </h2>
-              <p className="font-body-md text-surface-tint uppercase font-bold tracking-widest">
+              <p className="font-body-md text-surface-tint uppercase font-bold tracking-widest text-xs md:text-sm">
                 Built to Last. Engineered to Win.
               </p>
             </div>
@@ -143,7 +144,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-4 border-outline-variant">
             {/* Reliability */}
-            <div className="p-10 border-b-4 md:border-b-0 md:border-r-4 border-outline-variant hover:bg-surface-container-high transition-none group">
+            <div className="p-6 md:p-10 border-b-4 md:border-b-0 md:border-r-4 border-outline-variant hover:bg-surface-container-high transition-none group">
               <div className="mb-6 inline-flex items-center justify-center w-16 h-16 bg-surface-container-highest border-2 border-surface-tint">
                 <span className="material-symbols-outlined text-surface-tint text-4xl">
                   construction
@@ -160,7 +161,7 @@ export default function AboutPage() {
             </div>
 
             {/* Integrity */}
-            <div className="p-10 border-b-4 md:border-b-0 md:border-r-4 border-outline-variant hover:bg-surface-container-high transition-none group">
+            <div className="p-6 md:p-10 border-b-4 md:border-b-0 md:border-r-4 border-outline-variant hover:bg-surface-container-high transition-none group">
               <div className="mb-6 inline-flex items-center justify-center w-16 h-16 bg-surface-container-highest border-2 border-surface-tint">
                 <span className="material-symbols-outlined text-surface-tint text-4xl">
                   shield
@@ -177,7 +178,7 @@ export default function AboutPage() {
             </div>
 
             {/* Excellence */}
-            <div className="p-10 hover:bg-surface-container-high transition-none group">
+            <div className="p-6 md:p-10 hover:bg-surface-container-high transition-none group">
               <div className="mb-6 inline-flex items-center justify-center w-16 h-16 bg-surface-container-highest border-2 border-surface-tint">
                 <span className="material-symbols-outlined text-surface-tint text-4xl">
                   precision_manufacturing
@@ -195,61 +196,115 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Team / Action Section */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
-          <div className="bg-surface-container p-12 border-4 border-surface-tint flex flex-col justify-center">
-            <h2 className="font-headline-lg uppercase text-on-surface mb-6">
-              UNYIELDING STANDARDS
-            </h2>
-            <p className="font-body-lg text-on-surface mb-8">
-              Our team consists of veteran site managers, accredited structural
-              engineers, and logistics specialists who have spent decades in the field.
-              We don't hire just for skill; we hire for the "Apexe Mindset"—a relentless
-              pursuit of perfection and a deep respect for safety protocols.
-            </p>
-            <div className="space-y-4 mb-10">
-              <div className="flex items-center gap-4">
-                <span className="material-symbols-outlined text-surface-tint">
-                  check_circle
-                </span>
-                <span className="font-label-bold uppercase tracking-widest">
-                  ISO 9001 CERTIFIED OPERATIONS
-                </span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="material-symbols-outlined text-surface-tint">
-                  check_circle
-                </span>
-                <span className="font-label-bold uppercase tracking-widest">
-                  ADVANCED SEISMIC ANALYSIS
-                </span>
-              </div>
-              <div className="flex items-center gap-4">
-                <span className="material-symbols-outlined text-surface-tint">
-                  check_circle
-                </span>
-                <span className="font-label-bold uppercase tracking-widest">
-                  24/7 SITE SURVEILLANCE &amp; SAFETY
-                </span>
-              </div>
+        {/* Why Choose Us Section */}
+        <section className="mt-16 md:mt-24">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-10 md:mb-12 gap-3">
+            <div>
+              <h2 className="font-headline-lg uppercase text-on-surface mb-2 text-3xl md:text-4xl">
+                Why Choose Us
+              </h2>
+              <p className="font-body-md text-surface-tint uppercase font-bold tracking-widest text-xs md:text-sm">
+                Engineered Trust. Delivered Excellence.
+              </p>
             </div>
-            <button className="w-fit bg-surface-tint text-background font-serif uppercase tracking-tighter font-black px-10 py-4 border-2 border-surface-tint hover:bg-background hover:text-surface-tint transition-none active:translate-y-1">
-              MEET THE ARCHITECTS
-            </button>
+            <div className="h-px flex-grow mx-0 md:mx-12 mb-0 md:mb-4 bg-outline-variant hidden lg:block"></div>
           </div>
 
-          <div className="relative overflow-hidden group border-4 border-outline-variant">
-            <img
-              className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 brightness-75 group-hover:brightness-100"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdsgtE5BlnVRPbHRpmq-n8xW1IK-iazyfNJJJv28lv9X31Q56es31kwUersYrJl6q-_4TMvi0pNHWdIJNojvd2i3e7Rp0NDFARe9ETSSOhnoTtTzmMuRlTQ0zxm3mEfMdhL7fkszk5oY7HF8deY2ZsZehuCE_b-wg1Y5shbKJw5q3VHlnQT0tV3Rzr7i_2zDxrbLMW-Z6NW2Y4KzhzC9JK7KnvMNmU32vzVUizKoHPjF8UT1EnSKmEmS_PD13t9nZjdSiXUh2alA"
-              alt="Team portrait"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-            <div className="absolute bottom-8 left-8">
-              <div className="bg-surface-tint text-black font-black uppercase text-xs px-3 py-1 mb-2 inline-block">
-                ON-SITE OPS
+          {/* Stat highlights */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-outline-variant border-4 border-outline-variant mb-10 md:mb-12">
+            {[
+              { v: "25+", l: "Years Experience" },
+              { v: "480", l: "Projects Delivered" },
+              { v: "100%", l: "Safety Record" },
+              { v: "ISO", l: "9001 / 45001" },
+            ].map((s) => (
+              <div key={s.l} className="bg-surface-container p-5 md:p-8 text-center">
+                <div className="text-3xl md:text-5xl font-extrabold text-surface-tint mb-1 md:mb-2">
+                  {s.v}
+                </div>
+                <div className="text-[11px] md:text-xs uppercase tracking-widest text-on-surface-variant font-bold">
+                  {s.l}
+                </div>
               </div>
-              <h4 className="text-white font-headline-md uppercase">PRECISION IN MOTION</h4>
+            ))}
+          </div>
+
+          {/* Feature cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            {[
+              {
+                icon: "engineering",
+                title: "Veteran Engineering Team",
+                desc: "Accredited structural engineers, seasoned site managers, and logistics specialists working as one disciplined unit.",
+              },
+              {
+                icon: "verified",
+                title: "Certified & Compliant",
+                desc: "ISO 9001 and ISO 45001 certified operations, fully CHAS accredited across every active site.",
+              },
+              {
+                icon: "schedule",
+                title: "Delivered On Schedule",
+                desc: "Rigorous planning, precise scheduling, and active risk management keep projects on time and within spec.",
+              },
+              {
+                icon: "shield",
+                title: "Uncompromising Safety",
+                desc: "24/7 site surveillance and a zero-tolerance approach to safety violations on every build.",
+              },
+              {
+                icon: "savings",
+                title: "Transparent Pricing",
+                desc: "Open-ledger procurement and itemised quotations — no hidden fees, no surprises mid-build.",
+              },
+              {
+                icon: "support_agent",
+                title: "Dedicated Project Lead",
+                desc: "A single point of accountability from initial consultation through to final structural sign-off.",
+              },
+            ].map((f) => (
+              <div
+                key={f.title}
+                className="bg-surface-container p-6 md:p-8 border-l-4 border-surface-tint hover:bg-surface-container-highest transition-colors group"
+              >
+                <div className="mb-4 inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 bg-surface-container-highest border-2 border-surface-tint">
+                  <span className="material-symbols-outlined text-surface-tint text-2xl md:text-3xl">
+                    {f.icon}
+                  </span>
+                </div>
+                <h3 className="font-headline-md uppercase text-on-surface mb-3 text-xl md:text-2xl group-hover:text-surface-tint transition-colors">
+                  {f.title}
+                </h3>
+                <p className="font-body-md text-on-surface-variant text-sm md:text-base">
+                  {f.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="mt-10 md:mt-14 bg-surface-container border-4 border-surface-tint p-6 md:p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+            <div>
+              <h3 className="font-headline-md uppercase text-on-surface mb-2 text-2xl md:text-3xl">
+                Build with a partner you can trust.
+              </h3>
+              <p className="font-body-md text-on-surface-variant text-sm md:text-base">
+                Speak to our engineers about your next project — we respond within 24 hours.
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 w-full md:w-auto">
+              <Link
+                href="/contact"
+                className="text-center bg-surface-tint text-background font-serif uppercase tracking-tighter font-black px-6 md:px-8 py-3 md:py-4 border-2 border-surface-tint hover:bg-background hover:text-surface-tint transition-none active:translate-y-1 text-sm md:text-base"
+              >
+                Request a Consultation
+              </Link>
+              <Link
+                href="/services"
+                className="text-center border-2 border-surface-tint text-surface-tint font-serif uppercase tracking-tighter font-black px-6 md:px-8 py-3 md:py-4 hover:bg-surface-tint hover:text-background transition-none active:translate-y-1 text-sm md:text-base"
+              >
+                View Our Services
+              </Link>
             </div>
           </div>
         </section>

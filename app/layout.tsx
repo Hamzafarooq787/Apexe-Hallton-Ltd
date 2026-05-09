@@ -1,7 +1,7 @@
 import "./globals.css";
-import Link from "next/link";
-import { Inter, Newsreader } from "next/font/google";
 import Image from "next/image";
+import { Inter, Newsreader } from "next/font/google";
+import SiteHeader from "@/components/SiteHeader";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,79 +21,42 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Material Symbols font – REQUIRED for icons to work */}
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png"></link>
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
       </head>
-      <body className={`${inter.variable} ${newsreader.variable}`}>
-        {/* Noise Overlay */}
+      <body className={`${inter.variable} ${newsreader.variable} overflow-x-hidden`}>
         <div className="fixed inset-0 noise-overlay z-50 pointer-events-none"></div>
 
-        <header className="bg-black border-b-4 border-yellow-400 fixed top-0 w-full z-40">
-          <nav className="flex justify-between items-center px-4 md:px-10 py-4 max-w-[1280px] mx-auto">
+        <SiteHeader />
 
-            {/* LOGO IMAGE */}
-            <div className="flex items-center">
-              <Image
-                src="/logo.webp"
-                alt="Apexe Hallton Ltd"
-                width={160}
-                height={40}
-                className="object-contain"
-                priority
-              />
-            </div>
-
-            {/* NAV */}
-            <div className="hidden md:flex gap-8 text-sm font-bold uppercase">
-              <Link href="/" className="text-yellow-400 border-b-4 border-yellow-400 pb-1">
-                Home
-              </Link>
-              <Link href="/about" className="text-gray-400 hover:text-white">
-                About
-              </Link>
-              <Link href="/services" className="text-gray-400 hover:text-white">
-                Services
-              </Link>
-              <Link href="/contact" className="text-gray-400 hover:text-white">
-                Contact
-              </Link>
-            </div>
-
-            {/* BUTTON */}
-            <button className="bg-yellow-400 text-black px-4 md:px-6 py-2 font-bold uppercase text-xs md:text-sm hover:bg-yellow-500">
-              Request Specs
-            </button>
-
-          </nav>
-        </header>
-
-        {/* MAIN – pt-[80px] accounts for fixed header */}
-        <main className="pt-[80px]">{children}</main>
+        <main className="pt-[64px] md:pt-[80px]">{children}</main>
 
         <footer className="bg-zinc-900 border-t-4 border-zinc-800 mt-20">
-          <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 py-10 gap-6 max-w-[1280px] mx-auto">
-
-            <div className="text-center md:text-left flex flex-col items-center md:items-start">
-
-              {/* LOGO IMAGE */}
+          <div className="flex flex-col md:flex-row justify-between items-center px-6 md:px-10 py-8 md:py-10 gap-6 max-w-[1280px] mx-auto">
+            <div className="flex flex-col items-center md:items-start gap-2 text-center md:text-left">
               <Image
                 src="/logo.webp"
                 alt="Apexe Hallton Ltd"
                 width={140}
                 height={40}
-                className="object-contain mb-2"
+                className="object-contain h-8 w-auto"
               />
-
-              <p className="text-gray-500 text-sm">© 2024 Apexe Hallton Ltd</p>
+              <p className="text-gray-500 text-sm">© 2026 Apexe Hallton Ltd</p>
             </div>
 
-            <div className="flex gap-6 text-sm uppercase text-gray-500">
-              <Link href="#">Privacy</Link>
-              <Link href="#">Terms</Link>
+            <div className="text-sm uppercase text-gray-500">
+              Designed by{" "}
+              <a
+                href="https://linkedo.co.uk/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-400 font-bold hover:text-white hover:underline underline-offset-4 transition-colors"
+              >
+                Linkedo
+              </a>
             </div>
           </div>
 
