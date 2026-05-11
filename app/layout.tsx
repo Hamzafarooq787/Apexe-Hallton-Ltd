@@ -1,7 +1,33 @@
 import "./globals.css";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { Inter, Newsreader } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://apexehalltonltd.co.uk"),
+  title: {
+    default: "Apexe Hallton Ltd",
+    template: "%s | Apexe Hallton Ltd",
+  },
+  description:
+    "Apexe Hallton Ltd — structural construction and civil engineering.",
+  openGraph: {
+    title: "Apexe Hallton Ltd",
+    description:
+      "Apexe Hallton Ltd — structural construction and civil engineering.",
+    url: "https://apexehalltonltd.co.uk",
+    siteName: "Apexe Hallton Ltd",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Apexe Hallton Ltd",
+    description:
+      "Apexe Hallton Ltd — structural construction and civil engineering.",
+  },
+};
 
 const inter = Inter({
   subsets: ["latin"],
