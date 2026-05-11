@@ -116,9 +116,9 @@ export default function ContactPage() {
               </h2>
               <a
                 className="font-headline-md text-on-surface uppercase block hover:text-yellow-400 transition-none underline decoration-2 underline-offset-8 break-all text-lg md:text-2xl"
-                href="mailto:sales@apexehalltonltd.co.uk"
+                href="mailto:info@apexehalltonltd.co.uk"
               >
-                sales@apexehalltonltd.co.uk
+                info@apexehalltonltd.co.uk
               </a>
             </div>
 
