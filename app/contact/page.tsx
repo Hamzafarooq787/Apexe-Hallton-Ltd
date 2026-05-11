@@ -116,9 +116,9 @@ export default function ContactPage() {
               </h2>
               <a
                 className="font-headline-md text-on-surface uppercase block hover:text-yellow-400 transition-none underline decoration-2 underline-offset-8 break-all text-lg md:text-2xl"
-                href="mailto:sales@apexehalton.co.uk"
+                href="mailto:sales@apexehalltonltd.co.uk"
               >
-                sales@apexehalton.co.uk
+                sales@apexehalltonltd.co.uk
               </a>
             </div>
 
@@ -280,7 +280,7 @@ export default function ContactPage() {
                 Media Relations
               </h4>
               <p className="text-zinc-500 font-body-md">
-                For press kits or structural photography requests, contact our communications desk at media@apexehalton.co.uk.
+                For press kits or structural photography requests, contact our communications desk at media@apexehalltonltd.co.uk.
               </p>
             </div>
           </div>
